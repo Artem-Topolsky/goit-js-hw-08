@@ -1,33 +1,41 @@
-'use strict';
-class Storage {
-  #items;
-  constructor(items) {
-    this.#items = items
+`use strict`;
+const images = [
+  {
+    url: "./images/project.jpg",
+    alt: "Command project",
+  },
+  {
+    url: "./images/idea.jpg",
+    alt: "Idea",
+  },
+  {
+    url: "./images/smartphone.jpg",
+    alt: "Phone with notifications",
+  },
+  {
+    url: "./images/conference.jpg",
+    alt: "Conference room",
+  },
+  {
+    url: "./images/lounge.jpg",
+    alt: "Chilling room",
+  },
+  {
+    url: "./images/workflow.jpg",
+    alt: "Wolf of Wall Street",
   }
-  getItems() {
-    return this.#items;
-
-  }
-  addItem(newItem) {
-    this.#items.push(newItem);
-
-  }
-  removeItem(itemToRemove) {
-    this.#items = this.#items.filter(item => item !== itemToRemove);
-    }
-  }
+];
 
 
+const gallery = document.querySelector(".gallery");
+console.log(gallery);
+gallery.classList.add("list");
 
+const marcup = images
+  .map(
+    (image) =>
+      `<li class="list-item"><img class="images" src="${image.url}" alt="${image.alt}"></li>`
+  )
+  .join("");
 
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
-
-storage.removeItem("Scaner");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+gallery.insertAdjacentHTML("beforeend", marcup);
