@@ -1,3 +1,25 @@
+/* #name-input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  padding-left: 16px;
+}
+#name-input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+h1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+} */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #667eea, #764ba2);
@@ -7,39 +29,77 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .wrapper {
-  background-color: rgba(255, 255, 255, 0.15);
-  padding: 40px 50px;
-  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  max-width: 420px;
   width: 90%;
+  transition: transform 0.3s ease;
 }
 
-input#name-input {
+.wrapper:hover {
+  transform: scale(1.02);
+}
+
+/* input#name-input {
   width: 100%;
-  padding: 12px 15px;
-  border-radius: 8px;
-  border: none;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 2px solid transparent;
   font-size: 18px;
   outline: none;
-  margin-bottom: 25px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+} */
+input#name-input {
+  width: 300px; /* фиксированная ширина или max-width */
+  max-width: 90%; /* адаптивно */
+  margin: 0 auto 30px auto; /* сверху 0, снизу 30px, слева и справа авто для центрирования */
+  display: block; /* чтобы margin auto работал */
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-size: 18px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+input#name-input::placeholder {
+  color: #999;
 }
 
 input#name-input:focus {
-  background-color: #fff;
-  color: #333;
-  box-shadow: 0 0 8px #764ba2;
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 h1 {
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   letter-spacing: 0.03em;
+  color: #fff;
 }
 
 #name-output {
@@ -55,12 +115,13 @@ p a {
   color: #fff;
   font-weight: 600;
   background: rgba(0, 0, 0, 0.3);
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 p a:hover {
   background: #ffd700;
   color: #333;
+  transform: scale(1.05);
 }
