@@ -8,14 +8,14 @@
 #name-input::placeholder {
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   letter-spacing: 0.04em;
   color: #2e2f42;
 }
 h1 {
   font-weight: 600;
   font-size: 24px;
-  line-height: 133%;
+  line-height: 1.33;
   letter-spacing: 0.04em;
   color: #2e2f42;
 } */
@@ -59,23 +59,11 @@ body {
   transform: scale(1.02);
 }
 
-/* input#name-input {
-  width: 100%;
-  padding: 14px 18px;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  font-size: 18px;
-  outline: none;
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #333;
-} */
 input#name-input {
-  width: 300px; /* фиксированная ширина или max-width */
-  max-width: 90%; /* адаптивно */
-  margin: 0 auto 30px auto; /* сверху 0, снизу 30px, слева и справа авто для центрирования */
-  display: block; /* чтобы margin auto работал */
+  width: 300px;
+  max-width: 90%;
+  margin: 0 auto 30px auto;
+  display: block;
   padding: 14px 18px;
   border-radius: 10px;
   border: 2px solid transparent;

@@ -26,16 +26,29 @@ const images = [
   }
 ];
 
-
 const gallery = document.querySelector(".gallery");
-console.log(gallery);
-gallery.classList.add("list");
-
-const marcup = images
-  .map(
-    (image) =>
-      `<li class="list-item"><img class="images" src="${image.url}" alt="${image.alt}"></li>`
-  )
+const listItems = images.map(
+  ({ url, alt }) => {
+    return `
+    <li class="list-item">
+      <img src="${url}" alt="${alt}" class="images" />
+    </li>`
+  })
   .join("");
+console.log(gallery);
+gallery.insertAdjacentHTML("beforeend", listItems);
+// gallery.innerHTML = `${listItems}`;
 
-gallery.insertAdjacentHTML("beforeend", marcup);
+// const gallery = document.querySelector(".gallery");
+// const listItems = images.map(item => {
+//   const li = document.createElement("li");
+//   const img = document.createElement("img");
+//   li.classList.add("list-item");
+//   img.classList.add("images");
+//   img.src = item.url;
+//   img.alt = item.alt;
+//   li.appendChild(img);
+//   return li;
+// })
+// gallery.append(...listItems);
+
